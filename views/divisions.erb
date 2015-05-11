@@ -1,0 +1,10 @@
+
+<h2>List of divisions</h2>
+
+<a href="/divisions/new">Add Division</a>
+
+<ul>
+  <% @divisions.each() do |division| %>
+    <li><a href="/divisions/<%= division.id %>"><%= division.section %></a></li>
+  <% end %>
+</ul>
