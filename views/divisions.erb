@@ -6,5 +6,10 @@
 <ul>
   <% @divisions.each() do |division| %>
     <li><a href="/divisions/<%= division.id %>"><%= division.section %></a></li>
+    <form action="/divisions/<%=division.id()%>/update" method="post">
+      <input type="hidden" name="_method" value="patch">
+      <input id="division_new_section" name="division_new_section" type="text">
+      <button type="submit" class="btn-warning">Update Section Name</button>
+    </form>
   <% end %>
 </ul>

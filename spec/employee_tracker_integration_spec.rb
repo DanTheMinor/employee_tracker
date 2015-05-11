@@ -16,3 +16,13 @@ describe('the index page path', {:type => :feature}) do
     expect(page).to have_content("sales")
   end
 end
+
+describe('the update division path', {:type => :feature}) do
+  it('allows a user to update a divison') do
+    test_div = Division.create({:section => 'sales'})
+    visit('/divisions')
+    fill_in('division_new_section', :with => 'production')
+    click_button('Update Section Name')
+    expect(page).to have_content("production")
+  end
+end

@@ -31,3 +31,11 @@ post('/divisions') do
   @divisions = Division.all()
   erb(:divisions)
 end
+
+patch('/divisions/:id/update') do
+  @division = Division.find(params.fetch('id'))
+  section = params.fetch('division_new_section')
+  @division.update({:section => section})
+  @divisions = Division.all()
+  erb(:divisions)
+end
