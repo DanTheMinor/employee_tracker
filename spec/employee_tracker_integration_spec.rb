@@ -26,3 +26,11 @@ describe('the update division path', {:type => :feature}) do
     expect(page).to have_content("production")
   end
 end
+
+describe('the delete path', {:type => :feature}) do
+  it('allows a user to delete a division') do
+    test_div = Division.create({:section => 'sales'})
+    visit('/divisions')
+    click_button('Delete')
+  end
+end

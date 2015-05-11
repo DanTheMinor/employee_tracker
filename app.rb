@@ -39,3 +39,10 @@ patch('/divisions/:id/update') do
   @divisions = Division.all()
   erb(:divisions)
 end
+
+delete('/divisions/:id/delete') do
+  @division = Division.find(params.fetch('id'))
+  @division.delete()
+  @divisions = Division.all()
+  erb(:divisions)
+end

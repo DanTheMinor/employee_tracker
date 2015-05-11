@@ -11,5 +11,10 @@
       <input id="division_new_section" name="division_new_section" type="text">
       <button type="submit" class="btn-warning">Update Section Name</button>
     </form>
+
+    <form action="/divisions/<%=division.id()%>/delete" method="post">
+      <input type="hidden" name="_method" value="delete">
+      <button type="submit" class="btn-danger">Delete</button>
+    </form>
   <% end %>
 </ul>
